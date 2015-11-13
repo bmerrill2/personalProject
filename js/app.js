@@ -23,8 +23,8 @@ app.config(function($stateProvider, $urlRouterProvider){
       templateUrl: 'js/viewCalendar/calTemplate.html',
       controller: 'calCtrl'
   })
-  .state('survey', {
-      url: '/survey',
+  .state('schedule', {
+      url: '/schedule',
       templateUrl: 'js/scheduleSurvey/surveyTemplate.html',
       controller: 'surveyCtrl'
   })
