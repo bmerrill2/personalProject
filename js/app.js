@@ -1,4 +1,4 @@
-var app = angular.module('amgApp', ['firebase', 'ui.router'])
+var app = angular.module('amgApp', ['firebase', 'ui.router', 'ui.grid'])
 
 app.config(function($stateProvider, $urlRouterProvider){
   
