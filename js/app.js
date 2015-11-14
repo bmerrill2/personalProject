@@ -1,4 +1,10 @@
-var app = angular.module('amgApp', ['firebase', 'ui.router', 'ui.grid'])
+var app = angular.module('amgApp', ['firebase', 'ui.router', 'ui.grid', 'ngMaterial', 'ngAria'])
+
+.config(function($mdIconProvider) {
+    $mdIconProvider
+       .iconSet('social', 'img/icons/sets/social-icons.svg', 24)
+       .defaultIconSet('img/icons/sets/core-icons.svg', 24);
+})
 
 app.config(function($stateProvider, $urlRouterProvider){
   

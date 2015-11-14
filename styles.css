@@ -7,8 +7,13 @@ body {
   color: darkred;
 }
 
+.jumbotron {
+  margin-top: 10px;
+}
+
 .navbar {
   background-color: darkgrey;
+  margin-bottom: 70px;
 }
 
 .navbar-brand {
@@ -66,3 +71,8 @@ body {
   0%, 100%  { background:#6AB074; transform:scale(1); }
   50%       { background:rgb(119, 218, 78); transform:scale(1.5); }
 }
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
