@@ -4,16 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <title>AMG Employee Page</title>
-  <link type="text/css" href="styles.css" rel='stylesheet'>
   <link rel='stylesheet' type='text/css' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-grid/ui-grid.css">
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" href="styles.css" rel='stylesheet'>
 </head>
 
 <body>
   <div ng-controller='toolCtrl as ctrl'>
-    <md-toolbar>
+    <md-toolbar md-theme='amgTheme' class='md-hue-3'>
       <div class="md-toolbar-tools">
         <md-button class="md-icon-button material-icons" aria-label="Settings">
           menu
@@ -27,13 +27,12 @@
             <md-icon md-menu-origin class='material-icons md-36'>account_box</md-icon>
           </md-button>
           <md-menu-content width="4">
-              <md-menu-item>
-                Employee
-              </md-menu-item>
             <md-menu-item>
-              <md-menu-item>
-                Account Number:
-              </md-menu-item>
+              Employee
+            </md-menu-item>
+            <md-menu-item>
+              Account Number:
+            </md-menu-item>
             </md-menu-item>
           </md-menu-content>
         </md-menu>
@@ -71,15 +70,15 @@
 -->
 
   <div class="container">
-    <div class="jumbotron">
+    <div md-theme='amgTheme' class="jumbotron">
       <!-- Nav tabs -->
-      <ul class="nav nav-tabs">
-        <li role="presentation" ng-class="{active: $state === 'customers'}"><a ui-sref="customers">My Customers</a></li>
-        <li role="presentation"><a ui-sref="payroll">Payroll</a></li>
-        <li role="presentation"><a ui-sref="calendar">My Calendar</a></li>
-        <li role="presentation"><a ui-sref="schedule">Schedule Site Survey</a></li>
-        <li role="presentation"><a ui-sref="close">Schedule Close</a></li>
-      </ul>
+      <md-tabs  class='md-accent md-hue-3'>
+        <md-tab md-active label='Customers' ui-sref='customers'></md-tab>
+        <md-tab label='Payroll' ui-sref='payroll'></md-tab>
+        <md-tab label='Calendar' ui-sref='calendar'></md-tab>
+        <md-tab label='Schedule' ui-sref='schedule'></md-tab>
+        <md-tab label='Close' ui-sref='close'></md-tab>
+      </md-tabs>
       <div ui-view></div>
     </div>
 
@@ -96,6 +95,7 @@
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-aria/angular-aria.js"></script>
   <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
   <script src="js/app.js"></script>
   <script src="js/mainCtrl.js"></script>
   <script src="js/mainService.js"></script>
@@ -107,6 +107,7 @@
   <script src="js/viewCustomer/customerCtrl.js"></script>
   <script src="js/viewPayroll/payrollCtrl.js"></script>
   <script src="js/toolCtrl.js"></script>
+  <script src="js/login/loginService.js"></script>
 </body>
 
 </html>

@@ -2,6 +2,8 @@ var app = angular.module('amgApp')
 
 app.controller('customerCtrl', ['$scope', function ($scope) {
 
+  
+  
   $scope.myData = [
     {
       "firstName": "Cox",

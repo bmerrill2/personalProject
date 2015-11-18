@@ -1,3 +1,67 @@
 <h3>Close</h3>
-<p>Form</p>
-
+<form md-theme='default' name=customerForm>
+  <div layout='column' ng-cloak>
+    </br>
+    <div layout layout-sm="column">
+      <md-icon class="material-icons">person</md-icon>
+      <md-input-container flex>
+        <label>First name</label>
+        <input ng-model="customer.firstName">
+      </md-input-container>
+      <md-input-container flex>
+        <label>Last Name</label>
+        <input ng-model="customer.lastName">
+      </md-input-container>
+    </div>
+    <div>
+      <md-input-container class="md-icon-float md-block">
+        <label>Address</label>
+        <md-icon class="materials-icons name">home</md-icon>
+        <input ng-model="customer.address" type="text">
+      </md-input-container>
+    </div>
+    <div layout layout-sm="column">
+      <md-input-container flex>
+        <label>City</label>
+        <input ng-model="customer.city">
+      </md-input-container>
+      <md-input-container flex>
+        <label>State</label>
+        <md-select ng-model="customer.state">
+          <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+            {{state.abbrev}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+      <md-input-container flex>
+        <label>Zip Code</label>
+        <input name="zip" ng-model="customer.zip" required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+        <div ng-messages="customerForm.zip.$error" role="alert" multiple>
+          <div ng-message="required" class="my-message">You must supply a Zip Code</div>
+          <div ng-message="pattern" class="my-message">Please enter a valid Zip Code
+          </div>
+        </div>
+      </md-input-container>
+    </div>
+    <div layout layout-sm="column">
+      <md-input-container flex>
+        <md-icon class="material-icons">phone</md-icon>
+        <input name='phone' ng-model="user.phone" type="text" required ng-pattern="/^[0-9]{10}$/" md-maxlength="10">
+        <div ng-messages="customerForm.phone.$error" role="alert" multiple>
+          <div ng-message="required" class="my-message">You must supply a Phone Number</div>
+          <div ng-message="pattern" class="my-message">Please enter a valid Phone Number</div>
+        </div>
+      </md-input-container>
+      <md-input-container flex>
+        <md-icon class="material-icons">email</md-icon>
+        <input required type="text" name="email" ng-model="user.email" md-minlength="10" md-maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+        <div ng-messages="projectForm.email.$error" role="alert">
+          <div ng-message="required" class="my-message">Please enter a valid email</div>
+          <div ng-message="min-length" class="my-message"></div>
+          <div ng-message="max-length" class="my-message"></div>
+          <div ng-message="pattern" class="my-message">Your email must be between 10 and 100 characters long and look like an e-mail address.</div>
+        </div>
+      </md-input-container>
+    </div>
+  </div>
+</form>
