@@ -1,6 +1,6 @@
 var app = angular.module('amgApp')
 
-app.controller('closeCtrl', ['$scope', function ($scope) {
+app.controller('closeCtrl', ['$scope', 'currentAuth', function ($scope, currentAuth) {
   $scope.customer = {
     firstName: '',
     lastName: '',

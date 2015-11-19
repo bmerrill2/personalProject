@@ -1,4 +1,4 @@
-var app = angular.module('amgApp', ['firebase', 'ui.router', 'ui.grid', 'ngMaterial', 'ngAria', 'ngMessages'])
+var app = angular.module('amgApp', ['firebase', 'ui.router', 'ui.grid', 'ui.grid.resizeColumns', 'ngMaterial', 'ngAria', 'ngMessages'])
 
 .config(function ($mdIconProvider) {
   $mdIconProvider
@@ -6,7 +6,15 @@ var app = angular.module('amgApp', ['firebase', 'ui.router', 'ui.grid', 'ngMater
     .defaultIconSet('img/icons/sets/core-icons.svg', 24);
 })
 
+app.factory('auth', ['$firebaseAuth', function ($firebaseAuth) {
+    var ref = new Firebase('https://amgapp.firebasio.com');
+    return $firebaseAuth(ref);
+  }
+])
+
 app.config(function ($stateProvider, $urlRouterProvider) {
+
+  $urlRouterProvider.otherwise('/login')
 
   $stateProvider
     .state('login', {
@@ -17,27 +25,52 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     .state('customers', {
       url: '/customers',
       templateUrl: 'js/viewCustomer/customerTemplate.html',
-      controller: 'customerCtrl'
+      controller: 'customerCtrl',
+      resolve: {
+        'currentAuth': ['auth', function (auth) {
+          return auth.$requireAuth();
+        }]
+      }
     })
     .state('payroll', {
       url: '/payroll',
       templateUrl: 'js/viewPayroll/payrollTemplate.html',
-      controller: 'payrollCtrl'
+      controller: 'payrollCtrl',
+      resolve: {
+        'currentAuth': ['auth', function (auth) {
+          return auth.$requireAuth();
+        }]
+      }
     })
     .state('calendar', {
       url: '/calendar',
       templateUrl: 'js/viewCalendar/calTemplate.html',
-      controller: 'calCtrl'
+      controller: 'calCtrl',
+      resolve: {
+        'currentAuth': ['auth', function (auth) {
+          return auth.$requireAuth();
+        }]
+      }
     })
     .state('schedule', {
       url: '/schedule',
       templateUrl: 'js/scheduleSurvey/surveyTemplate.html',
-      controller: 'surveyCtrl'
+      controller: 'surveyCtrl',
+      resolve: {
+        'currentAuth': ['auth', function (auth) {
+          return auth.$requireAuth();
+        }]
+      }
     })
     .state('close', {
       url: '/close',
       templateUrl: 'js/scheduleClose/closeTemplate.html',
-      controller: 'closeCtrl'
+      controller: 'closeCtrl',
+      resolve: {
+        'currentAuth': ['auth', function (auth) {
+          return auth.$requireAuth();
+        }]
+      }
     })
 })
 

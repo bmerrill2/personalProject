@@ -1,5 +1,5 @@
 var app = angular.module('amgApp')
 
-app.controller('payrollCtrl', ['$scope', function($scope){
+app.controller('payrollCtrl', ['$scope', 'currentAuth', function($scope, currentAuth){
   
 }])

@@ -1,6 +1,6 @@
 var app = angular.module('amgApp')
 
-app.controller('surveyCtrl', ['$scope', '$firebaseObject', function ($scope, $firebaseObject) {
+app.controller('surveyCtrl', ['$scope', '$firebaseObject', 'currentAuth', function ($scope, $firebaseObject, currentAuth) {
 
   var ref = new Firebase('https://scheduletest.firebaseio.com/schedule');
 
