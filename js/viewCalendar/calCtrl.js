@@ -1,5 +1,5 @@
 var app = angular.module('amgApp')
 
-app.controller('calCtrl', ['$scope', 'currentAuth', function($scope, currentAuth){
-  
+app.controller('calCtrl', ['$scope', 'currentAuth', function ($scope, currentAuth) {
+
 }])

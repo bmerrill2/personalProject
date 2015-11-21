@@ -80,3 +80,7 @@ md-input-container.md-default-theme{
   background-image: none;
 }
 
+.small {
+  width: 30px;
+  height: 20px;
+}
