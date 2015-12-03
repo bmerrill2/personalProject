@@ -1,4 +1,4 @@
-var app = angular.module('amgApp', ['firebase', 'ui.router', 'ui.grid', 'ui.grid.resizeColumns', 'ngMaterial', 'ngAria', 'ngMessages', 'ui.grid.importer'])
+var app = angular.module('amgApp', ['firebase', 'ui.router', 'ui.grid', 'ui.grid.resizeColumns', 'ngMaterial', 'ngAria', 'ngAnimate', 'ngMessages', 'ui.grid.importer', 'ui.grid.selection'])
 
 .config(function ($mdIconProvider) {
   $mdIconProvider
@@ -32,10 +32,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }]
       }
     })
-    .state('payroll', {
-      url: '/payroll',
-      templateUrl: 'js/viewPayroll/payrollTemplate.html',
-      controller: 'payrollCtrl',
+    .state('customer', {
+      url: '/customerview',
+      templateUrl: 'js/customerPage/customerPage.html',
+      controller: 'customerPageCtrl',
       resolve: {
         'currentAuth': ['auth', function (auth) {
           return auth.$requireAuth();

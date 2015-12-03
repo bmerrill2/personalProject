@@ -6,7 +6,7 @@
       <md-icon class="material-icons">person</md-icon>
       <md-input-container flex>
         <label>First Name</label>
-        <input ng-model="customer.firstName" >
+        <input ng-model="customer.firstName">
       </md-input-container>
       <md-input-container flex>
         <label>Last Name</label>
@@ -54,7 +54,7 @@
       </md-input-container>
       <md-input-container flex>
         <md-icon class="material-icons">email</md-icon>
-        <input name="email"  aria-label='email' required type="text" placeholder="Email" ng-model="customer.email" md-minlength="10" md-maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+        <input name="email" aria-label='email' required type="text" placeholder="Email" ng-model="customer.email" md-minlength="10" md-maxlength="100" ng-pattern="/^.+@.+\..+$/" />
         <div ng-messages="projectForm.email.$error" role="alert" multiple>
           <div ng-message="required" class="my-message">Please enter a valid email</div>
           <div ng-message="min-length" class="my-message"></div>
@@ -81,8 +81,18 @@
         <input aria label='Utility Account Number' name='utilityAccountNumber' ng-model='customer.utilityAccountNUmber' type="text">
       </md-input-container>
     </div>
+    <div layout layout-sm='column'>
+      <md-input-container flex>
+        <label>Rep Name</label>
+        <input aria label='Rep Name' name='repName' ng-model="customer.repName" type='text'>
+      </md-input-container>
+      <md-input-container flex>
+        <label>Rep Phone Number</label>
+        <input aria label='Rep Phone Number' name='repPhoneNumber' ng-model="customer.repPhoneNumber" type='text'>
+      </md-input-container>
+    </div>
     <section md-theme='amgTheme' layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-      <md-button class="md-raised md-primary md-hue-3" ng-click='newCustomer(customer.firstName, customer.lastName, customer.address, customer.city, customer.state, customer.zip, customer.phone, customer.email, customer.electricBill, customer.currentUtilityProvider, customer.utilityAccountNUmber)'>Add New Customer</md-button>
+      <md-button class="md-raised md-primary md-hue-3" ng-click='newCustomer(customer.firstName, customer.lastName, customer.address, customer.city, customer.state, customer.zip, customer.phone, customer.email, customer.electricBill, customer.currentUtilityProvider, customer.utilityAccountNUmber, customer.repName, customer.repPhoneNumber)'>Add New Customer</md-button>
     </section>
   </div>
 </form>

@@ -14,8 +14,8 @@ app.controller('newCustCtrl', ['$scope', 'currentAuth', 'newCustService', '$fire
     electricBill: '',
     currentUtilityProvider: '',
     utilityAccountNumber: '',
-    rep: '',
-    repNumber: ''
+    repName: '',
+    repPhoneNumber: ''
   };
 
   $scope.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
@@ -32,7 +32,7 @@ app.controller('newCustCtrl', ['$scope', 'currentAuth', 'newCustService', '$fire
 
   $scope.customers = $firebaseArray($scope.custObj)
 
-  $scope.newCustomer = function (firstName, lastName, address, city, state, zip, phone, email, electricBill, currentUtilityProvider, utilityAccountNumber) {
+  $scope.newCustomer = function (firstName, lastName, address, city, state, zip, phone, email, electricBill, currentUtilityProvider, utilityAccountNumber, repName, repPhoneNumber) {
     $scope.customers.$add({
       firstName: firstName,
       lastName: lastName,
@@ -44,7 +44,9 @@ app.controller('newCustCtrl', ['$scope', 'currentAuth', 'newCustService', '$fire
       email: email,
       electricBill: electricBill,
       currentUtilityProvider: currentUtilityProvider,
-      utilityAccountNumber: utilityAccountNumber
+      utilityAccountNumber: utilityAccountNumber,
+      repName: repName,
+      repPhoneNumber: repPhoneNumber
     })
   }
 
