@@ -69,21 +69,15 @@ app.controller('customerCtrl', ['$scope', 'currentAuth', '$firebaseArray', 'newC
         enableColumnResizing: true
       },
       {
-        name: 'electricBill',
-        minWidth: 100,
-        width: 100,
+        name: 'ssn',
+        minWidth: 80,
+        width: 80,
         enableColumnResizing: true
       },
       {
-        name: 'currentUtilityProvider',
-        minWidth: 180,
-        width: 190,
-        enableColumnResizing: true
-      },
-      {
-        name: 'utilityAccountNumber',
-        minWidth: 120,
-        width: 150,
+        name: 'dob',
+        minWidth: 80,
+        width: 80,
         enableColumnResizing: true
       },
       {

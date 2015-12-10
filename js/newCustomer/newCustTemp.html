@@ -1,5 +1,5 @@
 <h3>Close</h3>
-<form md-theme='default' name=customerForm>
+<form md-theme='default' name='customerForm'>
   <div layout='column' ng-cloak>
     </br>
     <div layout layout-sm="column">
@@ -65,21 +65,10 @@
     </div>
     <div layout layout-sm='column'>
       <md-input-container flex>
-        <label>Current Electric Bill</label>
-        <input aria label='current electric bill' name='electric bill' ng-model='customer.electricBill' type="number" step='1'>
+        <label>Social Security Number</label>
+        <input aria label='social security number' name='social security number' ng-model='customer.ssn' required type="number">
       </md-input-container>
-      <md-input-container flex>
-        <label>Current Utility Provider</label>
-        <md-select ng-model="customer.currentUtilityProvider">
-          <md-option ng-repeat="provider in utilityProviders">
-            {{provider}}
-          </md-option>
-        </md-select>
-      </md-input-container>
-      <md-input-container flex>
-        <label>Utility Account Number</label>
-        <input aria label='Utility Account Number' name='utilityAccountNumber' ng-model='customer.utilityAccountNUmber' type="text">
-      </md-input-container>
+      <md-datepicker aria label='date of birth' md-placeholder='Date of Birth' ng-model="customer.dob" required type='date'></md-datepicker>
     </div>
     <div layout layout-sm='column'>
       <md-input-container flex>
@@ -92,7 +81,7 @@
       </md-input-container>
     </div>
     <section md-theme='amgTheme' layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-      <md-button class="md-raised md-primary md-hue-3" ng-click='newCustomer(customer.firstName, customer.lastName, customer.address, customer.city, customer.state, customer.zip, customer.phone, customer.email, customer.electricBill, customer.currentUtilityProvider, customer.utilityAccountNUmber, customer.repName, customer.repPhoneNumber)'>Add New Customer</md-button>
+      <md-button class="md-raised md-primary md-hue-3" ng-click='newCustomer(customer.firstName, customer.lastName, customer.address, customer.city, customer.state, customer.zip, customer.phone, customer.email, customer.ssn, customer.dob, customer.repName, customer.repPhoneNumber)'>Add New Customer</md-button>
     </section>
   </div>
 </form>

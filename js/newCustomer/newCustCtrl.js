@@ -11,9 +11,8 @@ app.controller('newCustCtrl', ['$scope', 'currentAuth', 'newCustService', '$fire
     zip: '',
     phone: '',
     email: '',
-    electricBill: '',
-    currentUtilityProvider: '',
-    utilityAccountNumber: '',
+    ssn: '',
+    dob: '',
     repName: '',
     repPhoneNumber: ''
   };
@@ -32,7 +31,7 @@ app.controller('newCustCtrl', ['$scope', 'currentAuth', 'newCustService', '$fire
 
   $scope.customers = $firebaseArray($scope.custObj)
 
-  $scope.newCustomer = function (firstName, lastName, address, city, state, zip, phone, email, electricBill, currentUtilityProvider, utilityAccountNumber, repName, repPhoneNumber) {
+  $scope.newCustomer = function (firstName, lastName, address, city, state, zip, phone, email, ssn, dob, repName, repPhoneNumber) {
     $scope.customers.$add({
       firstName: firstName,
       lastName: lastName,
@@ -42,12 +41,12 @@ app.controller('newCustCtrl', ['$scope', 'currentAuth', 'newCustService', '$fire
       zip: zip,
       phone: phone,
       email: email,
-      electricBill: electricBill,
-      currentUtilityProvider: currentUtilityProvider,
-      utilityAccountNumber: utilityAccountNumber,
+      ssn: ssn,
+      dob: dob,
       repName: repName,
       repPhoneNumber: repPhoneNumber
     })
+    $scope.customerForm.$setPristine()
   }
 
 }]);

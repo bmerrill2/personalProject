@@ -84,3 +84,23 @@ md-input-container.md-default-theme{
   width: 30px;
   height: 20px;
 }
+
+.bold{
+  font-weight: 500;
+}
+
+.md-datepicker-calendar-pane.md-pane-open {
+  background: white;
+}
+
+md-datepicker.md-default-theme, md-datepicker {
+  background: none;
+}
+
+.md-default-theme .md-datepicker-input{
+  background: none;
+}
+
+.customerCard {
+  padding: 8px;
+}

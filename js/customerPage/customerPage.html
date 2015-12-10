@@ -1,31 +1,25 @@
 <h3>Customer Information</h3>
 
 <div>
-  <md-content>
-    <md-card>
-      <md-card-title>
-        <md-card-title-text>
-          <span class="md-headline">{{customerTemplate.firstName}} {{customerTemplate.lastName}}</span>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-content>
-        <div>
-          Address City State Zip
-        </div>
-        <div>
-          Phone Number Email
-        </div>
-        <div>
-          Social Security Number DOB
-        </div>
-      </md-card-content>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button>Action 1</md-button>
-        <md-button>Action 2</md-button>
-      </md-card-actions>
-    </md-card>
+  <md-content class='customerCard'>
+    <span class="md-headline">{{customerTemplate.firstName}} {{customerTemplate.lastName}}</span>
+    </br>
+    </br>
+    <div>
+      <span class="md-subhead bold">Address:</span>{{customerTemplate.address}} {{customerTemplate.city}}, {{customerTemplate.state}} {{customerTemplate.zip}}
+    </div>
+    </br>
+    <div>
+      <span class='md-subhead bold'>Phone:</span> {{customerTemplate.phone}} <span class='md-subhead bold'>Email:</span> {{customerTemplate.email}}
+    </div>
+    </br>
+    <div>
+      <span class='md-subhead bold'>Social Security Number:</span> 1773663745 <span class='md-subhead bold'>DOB:</span> 12/12/12
+    </div>
+    <md-button>Action 1</md-button>
+    <md-button>Action 2</md-button>
   </md-content>
 
-  
+
 
 </div>
